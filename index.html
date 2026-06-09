@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Gulaabiiii ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+html{scroll-behavior:smooth}
+body{background:linear-gradient(#090b2d,#1f1147,#ff7aa2);color:#fff;overflow-x:hidden}
+.sec{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;text-align:center;position:relative}
+h1{font-size:3em;text-shadow:0 0 20px pink}
+p{max-width:700px;margin:10px;font-size:1.2em}
+.star,.heart,.balloon,.fire{position:fixed;pointer-events:none}
+.star{color:white;animation:tw 2s infinite alternate}
+@keyframes tw{from{opacity:.2}to{opacity:1}}
+.heart,.balloon,.fire{bottom:-50px;animation:up linear forwards}
+@keyframes up{to{transform:translateY(-120vh);opacity:0}}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:90%;max-width:700px}
+.pic{height:160px;border:2px dashed #fff;border-radius:20px;background:#ffffff22;display:flex;align-items:center;justify-content:center}
+button{padding:15px 30px;font-size:20px;border:none;border-radius:40px;margin:10px}
+#yes{background:#fff;color:#ff4d88}
+#no{background:#ff4d88;color:#fff;position:relative}
+#final{display:none;font-size:2rem}
+.type{overflow:hidden;white-space:nowrap;border-right:2px solid #fff;width:0;animation:type 5s steps(40,end) forwards}
+@keyframes type{to{width:100%}}
+.tap{position:absolute;bottom:30px;animation:tw 1s infinite}
+</style></head>
+<body>
+<div id=stars></div>
+<section class=sec>
+<h1>🌸 Happy Birthday Gulaabiiii 🌸</h1>
+<p class=type>A little surprise from your Kishmishi ❤️</p>
+<div class=tap>⬇ Scroll Down ⬇</div>
+</section>
+
+<section class=sec>
+<div style="font-size:100px">🎂</div>
+<h1>Make A Wish ✨</h1>
+<p><!-- WRITE YOUR MESSAGE HERE --></p>
+</section>
+
+<section class=sec>
+<h1>📸 Our Memories</h1>
+<div class=gallery>
+<div class=pic>PHOTO 1</div><div class=pic>PHOTO 2</div>
+<div class=pic>PHOTO 3</div><div class=pic>PHOTO 4</div>
+<div class=pic>PHOTO 5</div><div class=pic>PHOTO 6</div>
+</div>
+</section>
+
+<section class=sec>
+<h1>💌 Letter For You</h1>
+<p><!-- WRITE YOUR LETTER HERE --></p>
+<p><!-- WRITE YOUR SECOND MESSAGE HERE --></p>
+</section>
+
+<section class=sec>
+<h1>🌙 Under The Same Sky</h1>
+<p><!-- WRITE YOUR FINAL QUESTION HERE --></p>
+<div>
+<button id=yes>YES ❤️</button>
+<button id=no>NO 🥺</button>
+</div>
+<div id=final>
+🎆🎉❤️<br><br>
+You just made this birthday magical.<br>
+Forever starts with a smile. 🌹
+</div>
+</section>
+
+<script>
+for(let i=0;i<70;i++){
+let s=document.createElement('div');
+s.className='star';
+s.innerHTML='✦';
+s.style.left=Math.random()*100+'vw';
+s.style.top=Math.random()*100+'vh';
+s.style.fontSize=(5+Math.random()*15)+'px';
+s.style.animationDelay=Math.random()*2+'s';
+document.body.appendChild(s);
+}
+function make(sym,cls){
+let e=document.createElement('div');
+e.className=cls;
+e.innerHTML=sym;
+e.style.left=Math.random()*100+'vw';
+e.style.fontSize=(15+Math.random()*35)+'px';
+e.style.animationDuration=(4+Math.random()*5)+'s';
+document.body.appendChild(e);
+setTimeout(()=>e.remove(),9000);
+}
+setInterval(()=>make('❤️','heart'),500);
+setInterval(()=>make('🎈','balloon'),1100);
+
+const y=document.getElementById('yes');
+const n=document.getElementById('no');
+let sc=1;
+const txt=["NO 🥺","Really? 😭","Think Again ❤️","Pretty Please 🥹","Catch Me 😆"];
+let t=0;
+function move(){
+sc+=0.12;
+y.style.transform='scale('+sc+')';
+t=(t+1)%txt.length;
+n.innerHTML=txt[t];
+n.style.position='fixed';
+n.style.left=Math.random()*(innerWidth-120)+'px';
+n.style.top=Math.random()*(innerHeight-70)+'px';
+}
+n.addEventListener('mouseover',move);
+n.addEventListener('touchstart',e=>{e.preventDefault();move();});
+y.onclick=()=>{
+document.getElementById('final').style.display='block';
+y.style.display='none';n.style.display='none';
+for(let i=0;i<250;i++){
+setTimeout(()=>make(i%2?'🎉':'💖','fire'),i*15);
+}
+window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+}
+</script>
+</body></html>
