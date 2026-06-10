@@ -14,7 +14,6 @@ p{max-width:700px;margin:10px;font-size:1.2em}
 .heart,.balloon,.fire{bottom:-50px;animation:up linear forwards}
 @keyframes up{to{transform:translateY(-120vh);opacity:0}}
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:90%;max-width:700px}
-.pic{height:160px;border:2px dashed #fff;border-radius:20px;background:#ffffff22;display:flex;align-items:center;justify-content:center}
 button{padding:15px 30px;font-size:20px;border:none;border-radius:40px;margin:10px}
 #yes{background:#fff;color:#ff4d88}
 #no{background:#ff4d88;color:#fff;position:relative}
@@ -60,15 +59,16 @@ h1{
         text-shadow:0 0 30px #ff8fd8;
     }
 }
-.pic img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:20px;
-    box-shadow:0 0 20px rgba(255,255,255,0.3);
-}
+
 .pic{
-    overflow:hidden;
+  height:160px;
+  border:2px dashed #fff;
+  border-radius:20px;
+  background:#ffffff22;
+  display:flex;
+  align-items:center;
+  justify-content:center
+  overflow:hidden;
 }
 
 .pic img{
@@ -100,9 +100,9 @@ h1{
 <section class=sec>
 <h1>📸 Our Memories</h1>
 <div class=gallery>
-<div class=pic><img src="IMG-20260414-WA0047.jpg"></div><div class=pic><img src="IMG_20260523_213336_069.jpg"></div>
-<div class=pic><img src="IMG-20260414-WA0048.jpg"></div><div class=pic><img src="IMG_20260523_213339_907.jpg"></div>
-<div class=pic><img src="Screenshot_20260610-001204.png"></div><div class=pic><img src="Screenshot_20260610-001133.png"></div>
+<div class=pic><img src="IMG-20260414-WA0048.jpg"></div><div class=pic><img src="IMG_20260523_213336_069 (1).jpg"></div>
+<div class=pic><img src="Screenshot_20260610-001204 (1).png"></div><div class=pic><img src="IMG-20260414-WA0047.jpg"></div>
+<div class=pic><img src="IMG_20260523_213339_907.jpg"></div><div class=pic><img src="Screenshot_20260610-001133 (1).png"></div>
 </div>
 </section>
 
